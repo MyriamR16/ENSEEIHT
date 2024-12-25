@@ -1,0 +1,50 @@
+Algorithme de Gauss-Newton
+ndigits 9 
+Vraie Jacobienne = 0
+Methode diff finies = avants
+------------------------------------------------------------------
+         k     ||f'(beta)||   f(beta)      ||s||       exitflag 
+------------------------------------------------------------------
+
+hj =
+
+   3.1623e+01
+
+{Unable to perform assignment because the size of the left side is 1-by-1
+and the size of the right side is 7-by-1.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('diff_finies_avant', '/home/mra4306/Documents/Opti/tp3/optimisation-main/Optimisation/TP/TP3-diff-finies/diff_finies_avant.m', 30)" style="font-weight:bold">diff_finies_avant</a> (<a href="matlab: opentoline('/home/mra4306/Documents/Opti/tp3/optimisation-main/Optimisation/TP/TP3-diff-finies/diff_finies_avant.m',30,0)">line 30</a>)
+    Jac(:,j) = (1/hj)*(fun(x+hj*ej) -fun(x));
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('C14_diff_finies', '/home/mra4306/Documents/Opti/tp3/optimisation-main/Optimisation/TP/TP3-diff-finies/C14_diff_finies.m', 112)" style="font-weight:bold">C14_diff_finies</a> (<a href="matlab: opentoline('/home/mra4306/Documents/Opti/tp3/optimisation-main/Optimisation/TP/TP3-diff-finies/C14_diff_finies.m',112,0)">line 112</a>)
+	    Jres = diff_finies_avant( @(beta) res_C14_ref(beta,Ti,Ai), beta0, ndigits);
+} 
+C14_diff_finies
+Algorithme de Gauss-Newton
+ndigits 9 
+Vraie Jacobienne = 0
+Methode diff finies = avants
+------------------------------------------------------------------
+         k     ||f'(beta)||   f(beta)      ||s||       exitflag 
+------------------------------------------------------------------
+
+hj =
+
+   3.1623e+05
+
+{Unable to perform assignment because the size of the left side is 1-by-1
+and the size of the right side is 7-by-1.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('diff_finies_avant', '/home/mra4306/Documents/Opti/tp3/optimisation-main/Optimisation/TP/TP3-diff-finies/diff_finies_avant.m', 30)" style="font-weight:bold">diff_finies_avant</a> (<a href="matlab: opentoline('/home/mra4306/Documents/Opti/tp3/optimisation-main/Optimisation/TP/TP3-diff-finies/diff_finies_avant.m',30,0)">line 30</a>)
+    Jac(:,j) = (1/hj)*(fun(x+hj*ej) -fun(x));
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('C14_diff_finies', '/home/mra4306/Documents/Opti/tp3/optimisation-main/Optimisation/TP/TP3-diff-finies/C14_diff_finies.m', 112)" style="font-weight:bold">C14_diff_finies</a> (<a href="matlab: opentoline('/home/mra4306/Documents/Opti/tp3/optimisation-main/Optimisation/TP/TP3-diff-finies/C14_diff_finies.m',112,0)">line 112</a>)
+	    Jres = diff_finies_avant( @(beta) res_C14_ref(beta,Ti,Ai), beta0, ndigits);
+} 
+C14_diff_finies
+if system_dependent('IsDebugMode')==1, dbquit; end
+C14_diff_finies
+if system_dependent('IsDebugMode')==1, dbquit; end
+C14_diff_finies
+if system_dependent('IsDebugMode')==1, dbquit; end
+C14_diff_finies

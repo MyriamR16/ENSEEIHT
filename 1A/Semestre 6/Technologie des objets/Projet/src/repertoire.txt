@@ -1,0 +1,2 @@
+hbx,mdp3,baux,hugo,20,12-11-2002,oui
+si,mdp8,simon,simon,1000000,10-12-2020,non

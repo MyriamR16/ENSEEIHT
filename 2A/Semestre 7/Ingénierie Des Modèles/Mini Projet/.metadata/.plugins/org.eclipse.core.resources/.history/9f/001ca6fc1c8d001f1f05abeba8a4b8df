@@ -1,0 +1,10 @@
+[comment encoding = UTF-8 /]
+[module toTina('http://simplepdl', 'http://petriNet')]
+
+
+[template public netToTina(aNet : Net)]
+[comment @main/]
+[file (aNet.name, false, 'UTF-8')]
+
+[/file]
+[/template]

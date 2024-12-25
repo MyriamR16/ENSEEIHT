@@ -1,0 +1,86 @@
+\* Problem: ModelECommerce2 *\
+
+Minimize
+ CoutTotal: + 120 Y(M1,D1,C1) + 120 Y(M1,D1,C2) + 112 Y(M1,D2,C1)
+ + 112 Y(M1,D2,C2) + 91 Y(M2,D1,C1) + 91 Y(M2,D1,C2) + 110 Y(M2,D2,C1)
+ + 110 Y(M2,D2,C2) + 105 Y(M3,D1,C1) + 105 Y(M3,D1,C2) + 110 Y(M3,D2,C1)
+ + 110 Y(M3,D2,C2)
+
+Subject To
+ ContrainteStock(C1,M1): + X(M1,D1,C1) + X(M1,D2,C1) <= 3
+ ContrainteStock(C1,M2): + X(M2,D1,C1) + X(M2,D2,C1) <= 1
+ ContrainteStock(C1,M3): + X(M3,D1,C1) + X(M3,D2,C1) <= 2
+ ContrainteStock(C2,M1): + X(M1,D1,C2) + X(M1,D2,C2) <= 1
+ ContrainteStock(C2,M2): + X(M2,D1,C2) + X(M2,D2,C2) <= 2
+ ContrainteStock(C2,M3): + X(M3,D1,C2) + X(M3,D2,C2) <= 1
+ ContrainteDemande(D1,C1): + X(M1,D1,C1) + X(M2,D1,C1) + X(M3,D1,C1) = 2
+ ContrainteDemande(D1,C2): + X(M1,D1,C2) + X(M2,D1,C2) + X(M3,D1,C2)
+ = -0
+ ContrainteDemande(D2,C1): + X(M1,D2,C1) + X(M2,D2,C1) + X(M3,D2,C1) = 1
+ ContrainteDemande(D2,C2): + X(M1,D2,C2) + X(M2,D2,C2) + X(M3,D2,C2) = 3
+ DefinitionBorneInfY(M1,D1,C1): + X(M1,D1,C1) - Y(M1,D1,C1) >= -0
+ DefinitionBorneInfY(M1,D1,C2): + X(M1,D1,C2) - Y(M1,D1,C2) >= -0
+ DefinitionBorneInfY(M1,D2,C1): + X(M1,D2,C1) - Y(M1,D2,C1) >= -0
+ DefinitionBorneInfY(M1,D2,C2): + X(M1,D2,C2) - Y(M1,D2,C2) >= -0
+ DefinitionBorneInfY(M2,D1,C1): + X(M2,D1,C1) - Y(M2,D1,C1) >= -0
+ DefinitionBorneInfY(M2,D1,C2): + X(M2,D1,C2) - Y(M2,D1,C2) >= -0
+ DefinitionBorneInfY(M2,D2,C1): + X(M2,D2,C1) - Y(M2,D2,C1) >= -0
+ DefinitionBorneInfY(M2,D2,C2): + X(M2,D2,C2) - Y(M2,D2,C2) >= -0
+ DefinitionBorneInfY(M3,D1,C1): + X(M3,D1,C1) - Y(M3,D1,C1) >= -0
+ DefinitionBorneInfY(M3,D1,C2): + X(M3,D1,C2) - Y(M3,D1,C2) >= -0
+ DefinitionBorneInfY(M3,D2,C1): + X(M3,D2,C1) - Y(M3,D2,C1) >= -0
+ DefinitionBorneInfY(M3,D2,C2): + X(M3,D2,C2) - Y(M3,D2,C2) >= -0
+ DefinitionBorneSup(M1,D1,C1): + X(M1,D1,C1) - 5 Y(M1,D1,C1) <= -0
+ DefinitionBorneSup(M1,D1,C2): + X(M1,D1,C2) - Y(M1,D1,C2) <= -0
+ DefinitionBorneSup(M1,D2,C1): + X(M1,D2,C1) - 4 Y(M1,D2,C1) <= -0
+ DefinitionBorneSup(M1,D2,C2): + X(M1,D2,C2) - 4 Y(M1,D2,C2) <= -0
+ DefinitionBorneSup(M2,D1,C1): + X(M2,D1,C1) - 3 Y(M2,D1,C1) <= -0
+ DefinitionBorneSup(M2,D1,C2): + X(M2,D1,C2) - 2 Y(M2,D1,C2) <= -0
+ DefinitionBorneSup(M2,D2,C1): + X(M2,D2,C1) - 2 Y(M2,D2,C1) <= -0
+ DefinitionBorneSup(M2,D2,C2): + X(M2,D2,C2) - 5 Y(M2,D2,C2) <= -0
+ DefinitionBorneSup(M3,D1,C1): + X(M3,D1,C1) - 4 Y(M3,D1,C1) <= -0
+ DefinitionBorneSup(M3,D1,C2): + X(M3,D1,C2) - Y(M3,D1,C2) <= -0
+ DefinitionBorneSup(M3,D2,C1): + X(M3,D2,C1) - 3 Y(M3,D2,C1) <= -0
+ DefinitionBorneSup(M3,D2,C2): + X(M3,D2,C2) - 4 Y(M3,D2,C2) <= -0
+
+Bounds
+ 0 <= Y(M1,D1,C1) <= 1
+ 0 <= Y(M1,D1,C2) <= 1
+ 0 <= Y(M1,D2,C1) <= 1
+ 0 <= Y(M1,D2,C2) <= 1
+ 0 <= Y(M2,D1,C1) <= 1
+ 0 <= Y(M2,D1,C2) <= 1
+ 0 <= Y(M2,D2,C1) <= 1
+ 0 <= Y(M2,D2,C2) <= 1
+ 0 <= Y(M3,D1,C1) <= 1
+ 0 <= Y(M3,D1,C2) <= 1
+ 0 <= Y(M3,D2,C1) <= 1
+ 0 <= Y(M3,D2,C2) <= 1
+
+Generals
+ X(M1,D1,C1)
+ X(M1,D2,C1)
+ X(M2,D1,C1)
+ X(M2,D2,C1)
+ X(M3,D1,C1)
+ X(M3,D2,C1)
+ X(M1,D1,C2)
+ X(M1,D2,C2)
+ X(M2,D1,C2)
+ X(M2,D2,C2)
+ X(M3,D1,C2)
+ X(M3,D2,C2)
+ Y(M1,D1,C1)
+ Y(M1,D1,C2)
+ Y(M1,D2,C1)
+ Y(M1,D2,C2)
+ Y(M2,D1,C1)
+ Y(M2,D1,C2)
+ Y(M2,D2,C1)
+ Y(M2,D2,C2)
+ Y(M3,D1,C1)
+ Y(M3,D1,C2)
+ Y(M3,D2,C1)
+ Y(M3,D2,C2)
+
+End

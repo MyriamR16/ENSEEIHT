@@ -1,0 +1,30 @@
+net MyProcess
+pl Conception_ready(0)
+pl Conception_running(0)
+pl Conception_started(0)
+pl Conception_finished(0)
+pl Programmation_ready(0)
+pl Programmation_running(0)
+pl Programmation_started(0)
+pl Programmation_finished(0)
+pl RedactionDoc_ready(0)
+pl RedactionDoc_running(0)
+pl RedactionDoc_started(0)
+pl RedactionDoc_finished(0)
+pl RedactionTests_ready(0)
+pl RedactionTests_running(0)
+pl RedactionTests_started(0)
+pl RedactionTests_finished(0)
+pl concepteur(3)
+pl developpeur(2)
+pl machine(4)
+pl redacteur(1)
+pl testeur(2)
+tr Conception_start Conception_ready concepteur*2 machine*2 ->  Conception_started Conception_running
+tr Conception_finish Conception_running ->  Conception_finished concepteur*2 machine*2
+tr Programmation_start Programmation_ready Conception_finished developpeur*2 machine*3 ->  Programmation_started Programmation_running
+tr Programmation_finish Programmation_running ->  Programmation_finished developpeur*2 machine*3
+tr RedactionDoc_start RedactionDoc_ready Conception_started machine redacteur ->  RedactionDoc_started RedactionDoc_running
+tr RedactionDoc_finish RedactionDoc_running Conception_finished ->  RedactionDoc_finished machine redacteur
+tr RedactionTests_start RedactionTests_ready Conception_started machine*2 testeur ->  RedactionTests_started RedactionTests_running
+tr RedactionTests_finish RedactionTests_running Programmation_finished ->  RedactionTests_finished machine*2 testeur

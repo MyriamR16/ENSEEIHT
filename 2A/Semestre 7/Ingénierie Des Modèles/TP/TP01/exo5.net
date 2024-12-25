@@ -1,0 +1,6 @@
+pl x (4)
+pl y (2)
+tr t0 x*5 -> y*3 x*2
+tr t1 x*2 y -> y*3
+tr t2 y*5 -> x*5 
+tr t4 y?9 -> z

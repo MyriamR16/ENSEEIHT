@@ -1,0 +1,21 @@
+\* Problem: ModelECommerce1 *\
+
+Minimize
+ CoutTotal: + X(D1,F1,M1) + X(D2,F1,M1) + 2 X(D1,F1,M2) + 2 X(D2,F1,M2)
+ + 3 X(D1,F1,M3) + 3 X(D2,F1,M3) + X(D1,F2,M1) + X(D2,F2,M1)
+ + 3 X(D1,F2,M2) + 3 X(D2,F2,M2) + 2 X(D1,F2,M3) + 2 X(D2,F2,M3)
+
+Subject To
+ ContrainteStock(F1,M1): + X(D1,F1,M1) + X(D2,F1,M1) <= 2.5
+ ContrainteStock(F1,M2): + X(D1,F1,M2) + X(D2,F1,M2) <= 1
+ ContrainteStock(F1,M3): + X(D1,F1,M3) + X(D2,F1,M3) <= 2
+ ContrainteStock(F2,M1): + X(D1,F2,M1) + X(D2,F2,M1) <= 1
+ ContrainteStock(F2,M2): + X(D1,F2,M2) + X(D2,F2,M2) <= 2
+ ContrainteStock(F2,M3): + X(D1,F2,M3) + X(D2,F2,M3) <= 1
+ ContrainteDemande(D1,F1): + X(D1,F1,M1) + X(D1,F1,M2) + X(D1,F1,M3) = 2
+ ContrainteDemande(D1,F2): + X(D1,F2,M1) + X(D1,F2,M2) + X(D1,F2,M3)
+ = -0
+ ContrainteDemande(D2,F1): + X(D2,F1,M1) + X(D2,F1,M2) + X(D2,F1,M3) = 1
+ ContrainteDemande(D2,F2): + X(D2,F2,M1) + X(D2,F2,M2) + X(D2,F2,M3) = 3
+
+End

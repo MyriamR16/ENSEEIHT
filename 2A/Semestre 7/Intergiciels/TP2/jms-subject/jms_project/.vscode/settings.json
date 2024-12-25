@@ -1,0 +1,8 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/home/mra4306/Documents/Annee2/Intergiciels/TP2/jms-subject/apache-activemq-5.14.0/activemq-all-5.14.0.jar"
+    ]
+}

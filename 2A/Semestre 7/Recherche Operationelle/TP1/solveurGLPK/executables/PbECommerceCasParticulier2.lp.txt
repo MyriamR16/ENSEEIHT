@@ -1,0 +1,187 @@
+\* Problem: ModelECommerceCasParticulier2 *\
+
+Minimize
+ DistanceTotal: + X(ALPHA,C1) + X(ALPHA,C2) + 10 X(ALPHA,C3)
+ + 12 X(ALPHA,C4) + 12 X(ALPHA,C5) + X(C1,ALPHA) + X(C1,C2) + 8 X(C1,C3)
+ + 10 X(C1,C4) + 11 X(C1,C5) + X(C2,ALPHA) + X(C2,C1) + 8 X(C2,C3)
+ + 11 X(C2,C4) + 10 X(C2,C5) + 10 X(C3,ALPHA) + 8 X(C3,C1) + 8 X(C3,C2)
+ + X(C3,C4) + X(C3,C5) + 12 X(C4,ALPHA) + 10 X(C4,C1) + 11 X(C4,C2)
+ + X(C4,C3) + X(C4,C5) + 12 X(C5,ALPHA) + 11 X(C5,C1) + 10 X(C5,C2)
+ + X(C5,C3) + X(C5,C4)
+
+Subject To
+ ContrainteColonnesX(ALPHA): + X(ALPHA,ALPHA) + X(ALPHA,C1)
+ + X(ALPHA,C2) + X(ALPHA,C3) + X(ALPHA,C4) + X(ALPHA,C5) = 1
+ ContrainteColonnesX(C1): + X(C1,ALPHA) + X(C1,C1) + X(C1,C2) + X(C1,C3)
+ + X(C1,C4) + X(C1,C5) = 1
+ ContrainteColonnesX(C2): + X(C2,ALPHA) + X(C2,C1) + X(C2,C2) + X(C2,C3)
+ + X(C2,C4) + X(C2,C5) = 1
+ ContrainteColonnesX(C3): + X(C3,ALPHA) + X(C3,C1) + X(C3,C2) + X(C3,C3)
+ + X(C3,C4) + X(C3,C5) = 1
+ ContrainteColonnesX(C4): + X(C4,ALPHA) + X(C4,C1) + X(C4,C2) + X(C4,C3)
+ + X(C4,C4) + X(C4,C5) = 1
+ ContrainteColonnesX(C5): + X(C5,ALPHA) + X(C5,C1) + X(C5,C2) + X(C5,C3)
+ + X(C5,C4) + X(C5,C5) = 1
+ ContrainteLignesX(ALPHA): + X(ALPHA,ALPHA) + X(C1,ALPHA) + X(C2,ALPHA)
+ + X(C3,ALPHA) + X(C4,ALPHA) + X(C5,ALPHA) = 1
+ ContrainteLignesX(C1): + X(ALPHA,C1) + X(C1,C1) + X(C2,C1) + X(C3,C1)
+ + X(C4,C1) + X(C5,C1) = 1
+ ContrainteLignesX(C2): + X(ALPHA,C2) + X(C1,C2) + X(C2,C2) + X(C3,C2)
+ + X(C4,C2) + X(C5,C2) = 1
+ ContrainteLignesX(C3): + X(ALPHA,C3) + X(C1,C3) + X(C2,C3) + X(C3,C3)
+ + X(C4,C3) + X(C5,C3) = 1
+ ContrainteLignesX(C4): + X(ALPHA,C4) + X(C1,C4) + X(C2,C4) + X(C3,C4)
+ + X(C4,C4) + X(C5,C4) = 1
+ ContrainteLignesX(C5): + X(ALPHA,C5) + X(C1,C5) + X(C2,C5) + X(C3,C5)
+ + X(C4,C5) + X(C5,C5) = 1
+ ContrainteX(ALPHA): + X(ALPHA,ALPHA) = -0
+ ContrainteX(C1): + X(C1,C1) = -0
+ ContrainteX(C2): + X(C2,C2) = -0
+ ContrainteX(C3): + X(C3,C3) = -0
+ ContrainteX(C4): + X(C4,C4) = -0
+ ContrainteX(C5): + X(C5,C5) = -0
+ ContrainteOrdre(ALPHA,C1): + 10001 X(ALPHA,C1) + Ordre(ALPHA)
+ - Ordre(C1) <= 10000
+ ContrainteOrdre(ALPHA,C2): + 10001 X(ALPHA,C2) + Ordre(ALPHA)
+ - Ordre(C2) <= 10000
+ ContrainteOrdre(ALPHA,C3): + 10001 X(ALPHA,C3) + Ordre(ALPHA)
+ - Ordre(C3) <= 10000
+ ContrainteOrdre(ALPHA,C4): + 10001 X(ALPHA,C4) + Ordre(ALPHA)
+ - Ordre(C4) <= 10000
+ ContrainteOrdre(ALPHA,C5): + 10001 X(ALPHA,C5) + Ordre(ALPHA)
+ - Ordre(C5) <= 10000
+ ContrainteOrdre(C1,C1): + 10001 X(C1,C1) <= 10000
+ ContrainteOrdre(C1,C2): + 10001 X(C1,C2) + Ordre(C1) - Ordre(C2)
+ <= 10000
+ ContrainteOrdre(C1,C3): + 10001 X(C1,C3) + Ordre(C1) - Ordre(C3)
+ <= 10000
+ ContrainteOrdre(C1,C4): + 10001 X(C1,C4) + Ordre(C1) - Ordre(C4)
+ <= 10000
+ ContrainteOrdre(C1,C5): + 10001 X(C1,C5) + Ordre(C1) - Ordre(C5)
+ <= 10000
+ ContrainteOrdre(C2,C1): + 10001 X(C2,C1) - Ordre(C1) + Ordre(C2)
+ <= 10000
+ ContrainteOrdre(C2,C2): + 10001 X(C2,C2) <= 10000
+ ContrainteOrdre(C2,C3): + 10001 X(C2,C3) + Ordre(C2) - Ordre(C3)
+ <= 10000
+ ContrainteOrdre(C2,C4): + 10001 X(C2,C4) + Ordre(C2) - Ordre(C4)
+ <= 10000
+ ContrainteOrdre(C2,C5): + 10001 X(C2,C5) + Ordre(C2) - Ordre(C5)
+ <= 10000
+ ContrainteOrdre(C3,C1): + 10001 X(C3,C1) - Ordre(C1) + Ordre(C3)
+ <= 10000
+ ContrainteOrdre(C3,C2): + 10001 X(C3,C2) - Ordre(C2) + Ordre(C3)
+ <= 10000
+ ContrainteOrdre(C3,C3): + 10001 X(C3,C3) <= 10000
+ ContrainteOrdre(C3,C4): + 10001 X(C3,C4) + Ordre(C3) - Ordre(C4)
+ <= 10000
+ ContrainteOrdre(C3,C5): + 10001 X(C3,C5) + Ordre(C3) - Ordre(C5)
+ <= 10000
+ ContrainteOrdre(C4,C1): + 10001 X(C4,C1) - Ordre(C1) + Ordre(C4)
+ <= 10000
+ ContrainteOrdre(C4,C2): + 10001 X(C4,C2) - Ordre(C2) + Ordre(C4)
+ <= 10000
+ ContrainteOrdre(C4,C3): + 10001 X(C4,C3) - Ordre(C3) + Ordre(C4)
+ <= 10000
+ ContrainteOrdre(C4,C4): + 10001 X(C4,C4) <= 10000
+ ContrainteOrdre(C4,C5): + 10001 X(C4,C5) + Ordre(C4) - Ordre(C5)
+ <= 10000
+ ContrainteOrdre(C5,C1): + 10001 X(C5,C1) - Ordre(C1) + Ordre(C5)
+ <= 10000
+ ContrainteOrdre(C5,C2): + 10001 X(C5,C2) - Ordre(C2) + Ordre(C5)
+ <= 10000
+ ContrainteOrdre(C5,C3): + 10001 X(C5,C3) - Ordre(C3) + Ordre(C5)
+ <= 10000
+ ContrainteOrdre(C5,C4): + 10001 X(C5,C4) - Ordre(C4) + Ordre(C5)
+ <= 10000
+ ContrainteOrdre(C5,C5): + 10001 X(C5,C5) <= 10000
+
+Bounds
+ 0 <= X(ALPHA,ALPHA) <= 1
+ 0 <= X(ALPHA,C1) <= 1
+ 0 <= X(ALPHA,C2) <= 1
+ 0 <= X(ALPHA,C3) <= 1
+ 0 <= X(ALPHA,C4) <= 1
+ 0 <= X(ALPHA,C5) <= 1
+ 0 <= X(C1,ALPHA) <= 1
+ 0 <= X(C1,C1) <= 1
+ 0 <= X(C1,C2) <= 1
+ 0 <= X(C1,C3) <= 1
+ 0 <= X(C1,C4) <= 1
+ 0 <= X(C1,C5) <= 1
+ 0 <= X(C2,ALPHA) <= 1
+ 0 <= X(C2,C1) <= 1
+ 0 <= X(C2,C2) <= 1
+ 0 <= X(C2,C3) <= 1
+ 0 <= X(C2,C4) <= 1
+ 0 <= X(C2,C5) <= 1
+ 0 <= X(C3,ALPHA) <= 1
+ 0 <= X(C3,C1) <= 1
+ 0 <= X(C3,C2) <= 1
+ 0 <= X(C3,C3) <= 1
+ 0 <= X(C3,C4) <= 1
+ 0 <= X(C3,C5) <= 1
+ 0 <= X(C4,ALPHA) <= 1
+ 0 <= X(C4,C1) <= 1
+ 0 <= X(C4,C2) <= 1
+ 0 <= X(C4,C3) <= 1
+ 0 <= X(C4,C4) <= 1
+ 0 <= X(C4,C5) <= 1
+ 0 <= X(C5,ALPHA) <= 1
+ 0 <= X(C5,C1) <= 1
+ 0 <= X(C5,C2) <= 1
+ 0 <= X(C5,C3) <= 1
+ 0 <= X(C5,C4) <= 1
+ 0 <= X(C5,C5) <= 1
+ 1 <= Ordre(ALPHA) <= 6
+ 1 <= Ordre(C1) <= 6
+ 1 <= Ordre(C2) <= 6
+ 1 <= Ordre(C3) <= 6
+ 1 <= Ordre(C4) <= 6
+ 1 <= Ordre(C5) <= 6
+
+Generals
+ X(ALPHA,ALPHA)
+ X(ALPHA,C1)
+ X(ALPHA,C2)
+ X(ALPHA,C3)
+ X(ALPHA,C4)
+ X(ALPHA,C5)
+ X(C1,ALPHA)
+ X(C1,C1)
+ X(C1,C2)
+ X(C1,C3)
+ X(C1,C4)
+ X(C1,C5)
+ X(C2,ALPHA)
+ X(C2,C1)
+ X(C2,C2)
+ X(C2,C3)
+ X(C2,C4)
+ X(C2,C5)
+ X(C3,ALPHA)
+ X(C3,C1)
+ X(C3,C2)
+ X(C3,C3)
+ X(C3,C4)
+ X(C3,C5)
+ X(C4,ALPHA)
+ X(C4,C1)
+ X(C4,C2)
+ X(C4,C3)
+ X(C4,C4)
+ X(C4,C5)
+ X(C5,ALPHA)
+ X(C5,C1)
+ X(C5,C2)
+ X(C5,C3)
+ X(C5,C4)
+ X(C5,C5)
+ Ordre(ALPHA)
+ Ordre(C1)
+ Ordre(C2)
+ Ordre(C3)
+ Ordre(C4)
+ Ordre(C5)
+
+End

@@ -1,0 +1,29 @@
+(* Utilisation d'outils de preuve automatique à travers la passerelle Why3 pour résoudre une énigme *)
+theory Enquete
+
+   (* Définition des 3 propositions : A, B, C qui représentent le fait que les accusés sont innocents *)
+   predicate a
+   predicate b
+   predicate c
+
+   predicate da = (not a )/\ c 
+   predicate db = (not a )-> (not c)
+   predicate dc = c /\ ((not a) \/ (not b))
+   predicate conjonction = da  /\ db  /\ dc 
+   goal Theo0 : conjonction
+   goal noncompatible : (not conjonction)
+   
+   predicate temoignage = (da -> db) \/ (da->dc) \/ (db->dc) \/ (db->da) \/(dc->da) \/ (dc->db)
+   goal Theo1 : temoignage
+   
+   predicate innocents = (a /\ b /\ c) 
+   goal theo2 : innocents -> not da
+   goal theo21 : innocents -> not db 
+   goal theo22 : innocents -> not dc
+   
+   predicate verite =  (da /\ db /\ dc)
+   goal theo3 : verite ->   a 
+   goal theo31 : verite ->   b 
+   goal theo32 : verite ->  c 
+   
+end

@@ -1,0 +1,34 @@
+data;
+
+set COLIS := 
+C1
+C2;
+
+set MAGASIN :=
+M1
+M2
+M3;
+
+set DEMANDE :=
+D1
+D2;
+
+param ColisDemandeParCommande : C1 C2 :=
+D1 2 0 
+D2 1 3; 
+
+param StockColisParMagasin : C1 C2 :=
+M1 3 1 
+M2 1 2
+M3 2 1; 
+
+param CoutFixe : M1 M2 M3 :=
+D1 110 90 100
+D2 110 90 100;
+
+param CoutVariable : M1 M2 M3 :=
+D1 10 1 5
+D2 2 20 10;
+
+end;
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<simplepdl:Process xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:simplepdl="http://simplepdl" name="exempleSujet">
+  <processElements xsi:type="simplepdl:WorkDefinition" linksToSuccessors="//@processElements.4 //@processElements.5 //@processElements.6 //@processElements.7" name="Conception">
+    <occurrence occurrence="2" ressource="//@processElements.9"/>
+    <occurrence occurrence="2" ressource="//@processElements.11"/>
+  </processElements>
+  <processElements xsi:type="simplepdl:WorkDefinition" linksToPredecessors="//@processElements.6" linksToSuccessors="//@processElements.8" name="Programmation">
+    <occurrence occurrence="2" ressource="//@processElements.10"/>
+    <occurrence occurrence="3" ressource="//@processElements.11"/>
+  </processElements>
+  <processElements xsi:type="simplepdl:WorkDefinition" linksToPredecessors="//@processElements.4 //@processElements.5" name="RedactionDoc">
+    <occurrence occurrence="1" ressource="//@processElements.11"/>
+    <occurrence occurrence="1" ressource="//@processElements.12"/>
+  </processElements>
+  <processElements xsi:type="simplepdl:WorkDefinition" linksToPredecessors="//@processElements.7 //@processElements.8" name="RedactionTests">
+    <occurrence occurrence="2" ressource="//@processElements.11"/>
+    <occurrence occurrence="1" ressource="//@processElements.13"/>
+  </processElements>
+  <processElements xsi:type="simplepdl:WorkSequence" linkType="finishToFinish" predecessor="//@processElements.0" successor="//@processElements.2"/>
+  <processElements xsi:type="simplepdl:WorkSequence" linkType="finishToFinish" predecessor="//@processElements.0" successor="//@processElements.2"/>
+  <processElements xsi:type="simplepdl:WorkSequence" linkType="finishToFinish" predecessor="//@processElements.0" successor="//@processElements.1"/>
+  <processElements xsi:type="simplepdl:WorkSequence" linkType="finishToFinish" predecessor="//@processElements.0" successor="//@processElements.3"/>
+  <processElements xsi:type="simplepdl:WorkSequence" linkType="finishToFinish" predecessor="//@processElements.1" successor="//@processElements.3"/>
+  <processElements xsi:type="simplepdl:Ressource" name="concepteur" quantite="3" occurrence="//@processElements.0/@occurrence.0"/>
+  <processElements xsi:type="simplepdl:Ressource" name="developpeur" quantite="2" occurrence="//@processElements.1/@occurrence.0"/>
+  <processElements xsi:type="simplepdl:Ressource" name="machine" quantite="4" occurrence="//@processElements.0/@occurrence.1 //@processElements.1/@occurrence.1 //@processElements.2/@occurrence.0 //@processElements.3/@occurrence.0"/>
+  <processElements xsi:type="simplepdl:Ressource" name="redacteur" quantite="1" occurrence="//@processElements.2/@occurrence.1"/>
+  <processElements xsi:type="simplepdl:Ressource" name="testeur" quantite="2" occurrence="//@processElements.3/@occurrence.1"/>
+</simplepdl:Process>

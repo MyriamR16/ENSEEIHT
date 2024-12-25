@@ -1,0 +1,49 @@
+#  GLPK model file created by SUN for RO teaching
+
+
+###############################  Model ###############################
+
+
+###############################  Sets  ###############################
+
+set COLIS; 
+
+set MAGASIN;	
+
+set DEMANDE;	
+
+
+################### Variables ###################
+
+var X{m in MAGASIN, d in DEMANDE, c in COLIS}, >=0, integer;
+var Y{m in MAGASIN, d in DEMANDE, c in COLIS}, >=0, <=1, integer;
+
+###################  Constants: Data to load   #########################
+
+param ColisDemandeParCommande{d in DEMANDE, c in COLIS};
+param StockColisParMagasin{m in MAGASIN, c in COLIS};
+param CoutFixe{d in DEMANDE, m in MAGASIN};
+param CoutVariable{d in DEMANDE, m in MAGASIN};
+
+################### Constraints ###################
+
+
+s.t. ContrainteStock{c in COLIS, m in MAGASIN}:
+  sum{d in DEMANDE} X[m,d,c]  <= StockColisParMagasin[m,c];
+
+
+s.t. ContrainteDemande{d in DEMANDE, c in COLIS}:
+  sum{m in MAGASIN} X[m,d,c]  = ColisDemandeParCommande[d,c];
+
+s.t. DefinitionBorneInfY{m in MAGASIN, d in DEMANDE, c in COLIS}:
+  X[m,d,c]  >=  Y[m,d,c];
+
+s.t. DefinitionBorneSup{m in MAGASIN, d in DEMANDE, c in COLIS}:
+  X[m,d,c]  <=  Y[m,d,c] * (StockColisParMagasin[m,c] + ColisDemandeParCommande[d,c]);
+
+###### Objective ######
+
+minimize CoutTotal: 
+		sum{m in MAGASIN, c in COLIS, d in DEMANDE} Y[m,d,c] * (CoutFixe[d,m] + CoutVariable[d,m] ); 
+
+end;

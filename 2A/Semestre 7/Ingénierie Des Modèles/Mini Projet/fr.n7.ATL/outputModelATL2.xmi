@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:taskmaster="http://taskmaster">
+  <taskmaster:EventBundle name="exempleModele">
+    <events name="Conception_start"/>
+    <events name="Conception_finish">
+      <requirements xsi:type="taskmaster:Causal" target="/0/@events.0"/>
+    </events>
+    <events name="Programmation_start"/>
+    <events name="Programmation_finish">
+      <requirements xsi:type="taskmaster:Causal" target="/0/@events.2"/>
+      <requirements xsi:type="taskmaster:Causal" target="/0/@events.1"/>
+    </events>
+    <events name="RédactionDoc_start"/>
+    <events name="RédactionDoc_finish">
+      <requirements xsi:type="taskmaster:Causal" target="/0/@events.4"/>
+      <requirements xsi:type="taskmaster:Causal" target="/0/@events.1"/>
+      <requirements xsi:type="taskmaster:Causal" target="/0/@events.1"/>
+    </events>
+    <events name="RédactionTests_start"/>
+    <events name="RédactionTests_finish">
+      <requirements xsi:type="taskmaster:Causal" target="/0/@events.6"/>
+      <requirements xsi:type="taskmaster:Causal" target="/0/@events.1"/>
+      <requirements xsi:type="taskmaster:Causal" target="/0/@events.3"/>
+    </events>
+  </taskmaster:EventBundle>
+  <taskmaster:Physical requested="2"/>
+  <taskmaster:Physical requested="2"/>
+  <taskmaster:Physical requested="2"/>
+  <taskmaster:Physical requested="3"/>
+  <taskmaster:Physical requested="1"/>
+  <taskmaster:Physical requested="1"/>
+  <taskmaster:Physical requested="2"/>
+  <taskmaster:Physical requested="1"/>
+</xmi:XMI>

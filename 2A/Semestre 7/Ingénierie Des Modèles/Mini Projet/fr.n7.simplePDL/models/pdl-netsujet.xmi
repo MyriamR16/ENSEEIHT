@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ASCII"?>
+<petriNet:Net xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:petriNet="http://petriNet" name="pdlSujet">
+  <arcs poids="1" destination="//@noeud.9" source="//@noeud.5"/>
+  <arcs poids="1" destination="//@noeud.6" source="//@noeud.9"/>
+  <arcs poids="1" destination="//@noeud.7" source="//@noeud.9"/>
+  <arcs poids="1" destination="//@noeud.10" source="//@noeud.7"/>
+  <arcs poids="1" destination="//@noeud.8" source="//@noeud.10"/>
+  <arcs poids="2" destination="//@noeud.9" source="//@noeud.0"/>
+  <arcs poids="2" destination="//@noeud.0" source="//@noeud.10"/>
+  <arcs poids="2" destination="//@noeud.9" source="//@noeud.2"/>
+  <arcs poids="2" destination="//@noeud.2" source="//@noeud.10"/>
+  <arcs poids="1" destination="//@noeud.15" source="//@noeud.11"/>
+  <arcs poids="1" destination="//@noeud.12" source="//@noeud.15"/>
+  <arcs poids="1" destination="//@noeud.13" source="//@noeud.15"/>
+  <arcs poids="1" destination="//@noeud.16" source="//@noeud.13"/>
+  <arcs poids="1" destination="//@noeud.14" source="//@noeud.16"/>
+  <arcs poids="2" destination="//@noeud.15" source="//@noeud.1"/>
+  <arcs poids="2" destination="//@noeud.1" source="//@noeud.16"/>
+  <arcs poids="3" destination="//@noeud.15" source="//@noeud.2"/>
+  <arcs poids="3" destination="//@noeud.2" source="//@noeud.16"/>
+  <arcs poids="1" destination="//@noeud.21" source="//@noeud.17"/>
+  <arcs poids="1" destination="//@noeud.18" source="//@noeud.21"/>
+  <arcs poids="1" destination="//@noeud.19" source="//@noeud.21"/>
+  <arcs poids="1" destination="//@noeud.22" source="//@noeud.19"/>
+  <arcs poids="1" destination="//@noeud.20" source="//@noeud.22"/>
+  <arcs poids="1" destination="//@noeud.21" source="//@noeud.2"/>
+  <arcs poids="1" destination="//@noeud.2" source="//@noeud.22"/>
+  <arcs poids="1" destination="//@noeud.21" source="//@noeud.3"/>
+  <arcs poids="1" destination="//@noeud.3" source="//@noeud.22"/>
+  <arcs poids="1" destination="//@noeud.27" source="//@noeud.23"/>
+  <arcs poids="1" destination="//@noeud.24" source="//@noeud.27"/>
+  <arcs poids="1" destination="//@noeud.25" source="//@noeud.27"/>
+  <arcs poids="1" destination="//@noeud.28" source="//@noeud.25"/>
+  <arcs poids="1" destination="//@noeud.26" source="//@noeud.28"/>
+  <arcs poids="2" destination="//@noeud.27" source="//@noeud.2"/>
+  <arcs poids="2" destination="//@noeud.2" source="//@noeud.28"/>
+  <arcs poids="1" destination="//@noeud.27" source="//@noeud.4"/>
+  <arcs poids="1" destination="//@noeud.4" source="//@noeud.28"/>
+  <arcs poids="1" destination="//@noeud.22" source="//@noeud.8" linkType="readArc"/>
+  <arcs poids="1" destination="//@noeud.21" source="//@noeud.6" linkType="readArc"/>
+  <arcs poids="1" destination="//@noeud.15" source="//@noeud.8" linkType="readArc"/>
+  <arcs poids="1" destination="//@noeud.27" source="//@noeud.6" linkType="readArc"/>
+  <arcs poids="1" destination="//@noeud.28" source="//@noeud.14" linkType="readArc"/>
+  <noeud xsi:type="petriNet:Place" name="concepteur" entrant="//@arcs.6" sortant="//@arcs.5" nbJetons="3"/>
+  <noeud xsi:type="petriNet:Place" name="developpeur" entrant="//@arcs.15" sortant="//@arcs.14" nbJetons="2"/>
+  <noeud xsi:type="petriNet:Place" name="machine" entrant="//@arcs.8 //@arcs.17 //@arcs.24 //@arcs.33" sortant="//@arcs.7 //@arcs.16 //@arcs.23 //@arcs.32" nbJetons="4"/>
+  <noeud xsi:type="petriNet:Place" name="redacteur" entrant="//@arcs.26" sortant="//@arcs.25" nbJetons="1"/>
+  <noeud xsi:type="petriNet:Place" name="testeur" entrant="//@arcs.35" sortant="//@arcs.34" nbJetons="2"/>
+  <noeud xsi:type="petriNet:Place" name="Conception_ready" sortant="//@arcs.0" nbJetons="1"/>
+  <noeud xsi:type="petriNet:Place" name="Conception_started" entrant="//@arcs.1" sortant="//@arcs.37 //@arcs.39"/>
+  <noeud xsi:type="petriNet:Place" name="Conception_running" entrant="//@arcs.2" sortant="//@arcs.3"/>
+  <noeud xsi:type="petriNet:Place" name="Conception_finished" entrant="//@arcs.4" sortant="//@arcs.36 //@arcs.38"/>
+  <noeud xsi:type="petriNet:Transition" name="Conception_start" entrant="//@arcs.0 //@arcs.5 //@arcs.7" sortant="//@arcs.1 //@arcs.2"/>
+  <noeud xsi:type="petriNet:Transition" name="Conception_finish" entrant="//@arcs.3" sortant="//@arcs.4 //@arcs.6 //@arcs.8"/>
+  <noeud xsi:type="petriNet:Place" name="Programmation_ready" sortant="//@arcs.9" nbJetons="1"/>
+  <noeud xsi:type="petriNet:Place" name="Programmation_started" entrant="//@arcs.10"/>
+  <noeud xsi:type="petriNet:Place" name="Programmation_running" entrant="//@arcs.11" sortant="//@arcs.12"/>
+  <noeud xsi:type="petriNet:Place" name="Programmation_finished" entrant="//@arcs.13" sortant="//@arcs.40"/>
+  <noeud xsi:type="petriNet:Transition" name="Programmation_start" entrant="//@arcs.9 //@arcs.14 //@arcs.16 //@arcs.38" sortant="//@arcs.10 //@arcs.11"/>
+  <noeud xsi:type="petriNet:Transition" name="Programmation_finish" entrant="//@arcs.12" sortant="//@arcs.13 //@arcs.15 //@arcs.17"/>
+  <noeud xsi:type="petriNet:Place" name="RedactionDoc_ready" sortant="//@arcs.18" nbJetons="1"/>
+  <noeud xsi:type="petriNet:Place" name="RedactionDoc_started" entrant="//@arcs.19"/>
+  <noeud xsi:type="petriNet:Place" name="RedactionDoc_running" entrant="//@arcs.20" sortant="//@arcs.21"/>
+  <noeud xsi:type="petriNet:Place" name="RedactionDoc_finished" entrant="//@arcs.22"/>
+  <noeud xsi:type="petriNet:Transition" name="RedactionDoc_start" entrant="//@arcs.18 //@arcs.23 //@arcs.25 //@arcs.37" sortant="//@arcs.19 //@arcs.20"/>
+  <noeud xsi:type="petriNet:Transition" name="RedactionDoc_finish" entrant="//@arcs.21 //@arcs.36" sortant="//@arcs.22 //@arcs.24 //@arcs.26"/>
+  <noeud xsi:type="petriNet:Place" name="RedactionTests_ready" sortant="//@arcs.27" nbJetons="1"/>
+  <noeud xsi:type="petriNet:Place" name="RedactionTests_started" entrant="//@arcs.28"/>
+  <noeud xsi:type="petriNet:Place" name="RedactionTests_running" entrant="//@arcs.29" sortant="//@arcs.30"/>
+  <noeud xsi:type="petriNet:Place" name="RedactionTests_finished" entrant="//@arcs.31"/>
+  <noeud xsi:type="petriNet:Transition" name="RedactionTests_start" entrant="//@arcs.27 //@arcs.32 //@arcs.34 //@arcs.39" sortant="//@arcs.28 //@arcs.29"/>
+  <noeud xsi:type="petriNet:Transition" name="RedactionTests_finish" entrant="//@arcs.30 //@arcs.40" sortant="//@arcs.31 //@arcs.33 //@arcs.35"/>
+</petriNet:Net>

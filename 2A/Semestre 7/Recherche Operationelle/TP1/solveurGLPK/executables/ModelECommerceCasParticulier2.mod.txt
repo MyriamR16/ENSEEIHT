@@ -1,0 +1,41 @@
+###############################  Model ###############################
+
+
+###############################  Sets  ###############################
+
+set CLIENTS; 	
+
+###################  Constants: Data to load   #########################
+param N, >=0 , integer; 
+param Distances{i in CLIENTS, j in CLIENTS};
+
+################### Variables ###################
+
+var X{i in CLIENTS, j in CLIENTS}, >=0, <=1, integer;
+var Ordre{i in CLIENTS}, >=1, <=N , integer;
+
+
+################### Constraints ###################
+
+s.t. ContrainteColonnesX{i in CLIENTS}:
+  sum{j in CLIENTS} X[i,j]  = 1 ;
+
+
+s.t. ContrainteLignesX{j in CLIENTS}:
+  sum{i in CLIENTS} X[i,j]  = 1 ;
+
+
+s.t. ContrainteX{i in CLIENTS}:
+  X[i,i]  = 0 ;
+
+
+s.t. ContrainteOrdre{i in CLIENTS, j in CLIENTS : j!="ALPHA"}:
+    10001*X[i,j] - (Ordre[j] - Ordre[i]) <= 10000;
+
+
+###### Objective ######
+
+minimize DistanceTotal: 
+		sum{i in CLIENTS, j in CLIENTS} X[i,j] * Distances[i,j]; 
+
+end;

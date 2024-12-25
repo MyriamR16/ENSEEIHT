@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="petrinet"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="totina"/>
+			<item value="simplepdl"/>
+			<item value="main"/>
+			<item value="aProcess"/>
+			<item value="todo"/>
+			<item value="packageIns"/>
+			<item value="elements"/>
+			<item value="processElementsssssssss"/>
+			<item value="processelement"/>
+			<item value="doSwi"/>
+			<item value="do"/>
+			<item value=" simple"/>
+		</list>
+		<list key="replacehistory">
+			<item value="petrinet"/>
+			<item value="aNet"/>
+			<item value="noeud"/>
+			<item value="processElements"/>
+			<item value="ProcessElement"/>
+			<item value="processElement"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="745"/>
+		<item key="DIALOG_Y_ORIGIN" value="550"/>
+		<item key="DIALOG_WIDTH" value="408"/>
+		<item key="DIALOG_HEIGHT" value="474"/>
+		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>
+	</section>
+</section>

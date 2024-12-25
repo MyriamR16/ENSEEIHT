@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="petriNet" nsURI="http://petriNet" nsPrefix="petriNet">
+  <eClassifiers xsi:type="ecore:EClass" name="Net">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arcs" upperBound="-1" eType="#//Arc"
+        containment="true" eOpposite="#//Arc/net"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="noeud" upperBound="-1"
+        eType="#//Noeud" containment="true" eOpposite="#//Noeud/net"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Noeud" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entrant" upperBound="-1"
+        eType="#//Arc" eOpposite="#//Arc/destination"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sortant" upperBound="-1"
+        eType="#//Arc" eOpposite="#//Arc/source"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="net" lowerBound="1" eType="#//Net"
+        eOpposite="#//Net/noeud"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="#//Noeud"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Place" eSuperTypes="#//Noeud">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbJetons" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Arc">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="poids" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destination" lowerBound="1"
+        eType="#//Noeud" eOpposite="#//Noeud/entrant"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//Noeud" eOpposite="#//Noeud/sortant"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="linkType" lowerBound="1"
+        eType="#//ArcType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="net" lowerBound="1" eType="#//Net"
+        eOpposite="#//Net/arcs"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ArcType">
+    <eLiterals name="simple"/>
+    <eLiterals name="readArc" value="1"/>
+  </eClassifiers>
+</ecore:EPackage>

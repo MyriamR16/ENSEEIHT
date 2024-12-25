@@ -1,0 +1,108 @@
+% Compte-rendu minimal du mini-projet SDA : LCA et TH
+% Auteur : Robbana Myriam
+% Groupe de TP : F
+
+
+**Consigne :** Vous devez écrire vos réponse à la place des ... en laissant
+une ligne vide avant et deux après votre réponse.
+
+**Remarque :** Ce document utilise le langage Markdown. On peut en engendrer
+une version PDF en faisant par exemple :
+
+~~~
+pandoc --toc -N -o LISEZ-MOI.pdf LISEZ-MOI.txt
+~~~
+
+
+# Exercice 1
+
+## Question 1.4
+
+**Indiquer les inconvénients/avantages d'une implantation par listes chaînées
+d'une SDA.**
+
+Avantages :
+- Les listes chaînées permettent d'utiliser juste la mémoire dont on a besoin et à la demande, 
+si on a besoin de mémoire on fait une allocation et sinon on désalloue. Contrairement au tableau où l'on peut 
+se retrouver dans une situation où on crée un tableau trop petit qui suffit pas, ou inversement un tableau 
+trop grand qu'on utilise peu.
+-La suppression d'un element dans une liste chainée n'engendre pas de décalage comme pour les tableaux. 
+Inconvénients : Pour accéder à un element dans une liste chaînée, on est obligé de la parcourir, alors que pour un tableau 
+par exemple on ferait uniquement l'opération élémentaire Tableau[i]. 
+
+
+# Évaluation expérimentale.
+
+## Performance comparée de LCA et TH
+
+Indiquer ici les résultats obtenus.
+
+time ./evaluer_alea_lca 1000 10000
+Borne : 1000
+Taille : 10000
+Min : 2
+Max : 22
+
+real  0m0.031s
+user  0m0.030s
+sys   0m0.001s
+
+time ./evaluer_alea_th 1000 10000
+Borne : 1000
+Taille : 10000
+Min : 2
+Max : 23
+
+real  0m0.004s
+user  0m0.004s
+sys   0m0.000s
+
+
+time sleep 10 
+
+real  0m10.003s
+user  0m0.003s
+sys   0m0.000s
+
+
+
+## Qualité du générateur aléatoire
+
+Indiquer les conclusions quant à la qualité du générateur aléatoire.
+
+On voit bien, que evaluer_alea_th est beaucoup plus rapide et performant que 
+evaluer_alea_lca, ce qui assure une meilleure qualité de ce générateur aléatoire. 
+
+Ces tests permettent de confirmer qu'utiliser des structures de hachages 
+est beaucoup plus rapide et efficace que de simples structures de données 
+associatives.
+
+
+
+# Principales difficultés rencontrées
+
+Indiquer ici les principales difficultés rencontrées lors de la réalisation de
+ce projet et comment elles ont été surmontées ou contournéeS.
+
+J'ai rencontré beaucoup de problèmes liés aux instanciations des modules.
+Selon moi, c'était la partie la plus difficile de ce projet. 
+Pour surmonter ces difficultées, je me suis appuyée plus en profondeur sur le 
+cour. De plus, la dernière séance de tp a permis réellement d'éclaircir certaines notions. 
+
+
+
+# Informations complémentaires
+
+Indiquer ici les informations qui pourraient aider à la compréhension du
+travail réalisé.
+
+
+
+# Bilan personnel
+
+Quel bilan personnel tirez-vous de ce mini-projet ?
+
+Ce mini-projet m'a permis de me familiariser encore plus au langage ADA. 
+Avant cela, je n'avais jamais eu à remplir des codes de A à Z, étant donné que les tp
+sont toujours des codes pré-remplis à compléter. 
+C'était donc l'occasion de tester réellement mes connaissances sur ce point. 

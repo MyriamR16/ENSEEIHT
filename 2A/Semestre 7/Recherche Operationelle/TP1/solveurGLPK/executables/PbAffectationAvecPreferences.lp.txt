@@ -1,0 +1,43 @@
+\* Problem: ModeleAffectationAvecPreferences *\
+
+Maximize
+ BeneficeTotal: + 4 X(P1,T1) + 7 X(P2,T1) + 5 X(P3,T1) + 8 X(P1,T2)
+ + X(P2,T2) + 5 X(P3,T2) + 6 X(P1,T3) + 3 X(P2,T3) + 7 X(P3,T3)
+
+Subject To
+ RespectUneTachePourUnePersonne(T1): + X(P1,T1) + X(P2,T1) + X(P3,T1)
+ = 1
+ RespectUneTachePourUnePersonne(T2): + X(P1,T2) + X(P2,T2) + X(P3,T2)
+ = 1
+ RespectUneTachePourUnePersonne(T3): + X(P1,T3) + X(P2,T3) + X(P3,T3)
+ = 1
+ RespectUnePersonnePourUneTache(P1): + X(P1,T1) + X(P1,T2) + X(P1,T3)
+ = 1
+ RespectUnePersonnePourUneTache(P2): + X(P2,T1) + X(P2,T2) + X(P2,T3)
+ = 1
+ RespectUnePersonnePourUneTache(P3): + X(P3,T1) + X(P3,T2) + X(P3,T3)
+ = 1
+
+Bounds
+ 0 <= X(P1,T1) <= 1
+ 0 <= X(P2,T1) <= 1
+ 0 <= X(P3,T1) <= 1
+ 0 <= X(P1,T2) <= 1
+ 0 <= X(P2,T2) <= 1
+ 0 <= X(P3,T2) <= 1
+ 0 <= X(P1,T3) <= 1
+ 0 <= X(P2,T3) <= 1
+ 0 <= X(P3,T3) <= 1
+
+Generals
+ X(P1,T1)
+ X(P2,T1)
+ X(P3,T1)
+ X(P1,T2)
+ X(P2,T2)
+ X(P3,T2)
+ X(P1,T3)
+ X(P2,T3)
+ X(P3,T3)
+
+End

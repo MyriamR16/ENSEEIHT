@@ -1,0 +1,15 @@
+Myriam Robbana 
+    • Initialiser : OK 
+    • Detruire : OK
+    • Afficher_Debug : OK
+    • Est_Vide : OK
+    • Taille : OK mais tu pourrais utiliser la récursivité. Si Sda est null, on renvoie 0, sinon on calcule 1 + Taille(suivant)
+    • Enregistrer : OK mais tu pourrais utiliser la récursivité et donc ne pas utiliser de while.
+    • Cle_Presente : OK mais tu pourrais utiliser la récursivité et donc ne pas utiliser de while.
+    • La_Valeur : OK mais tu pourrais utiliser la récursivité et donc ne pas utiliser de while. 
+		Si tu regardes ta fonciton La_Valeur, tu vois que c’est une fonction assez proche de Cle_Presente. 
+		Il pourrait alors être intéressant de créer une fonction auxiliaire pour factoriser le code. 
+		Par exemple une fonction La_Clef qui te renvoie la valeur de la clef. 
+		Cela te permet donc de traiter Cle_Presente et La_Valeur
+    • Supprimer : OK mais tu pourrais utiliser la récursivité et donc ne pas utiliser de while.
+    • Pour_Chaque : Tu pourrais utiliser la récursivité

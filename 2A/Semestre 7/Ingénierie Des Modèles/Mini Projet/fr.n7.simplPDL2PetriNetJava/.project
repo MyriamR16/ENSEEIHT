@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>fr.n7.simplPDL2PetriNetJava</name>
+	<comment></comment>
+	<projects>
+		<project>fr.n7.petriNet</project>
+		<project>fr.n7.simplePDL</project>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+	</natures>
+</projectDescription>

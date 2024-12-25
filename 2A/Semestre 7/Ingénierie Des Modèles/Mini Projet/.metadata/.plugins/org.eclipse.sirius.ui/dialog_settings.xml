@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExportRepresentationsAsImagesDialog">
+		<item key="ExportRepresentationsAsImagesDialog.imageFormat" value="JPG"/>
+		<list key="ExportRepresentationsAsImagesDialog.file">
+			<item value="/home/mra4306/Téléchargements"/>
+			<item value="/home/mra4306/Documents/Annee2/IDM/TP02/fr.n7.simplePDL"/>
+			<item value="/home/mra4306/Documents/Annee2/IDM/TP02/fr.n7.simplePDL/simplepdl class diagram.jpg"/>
+		</list>
+	</section>
+</section>

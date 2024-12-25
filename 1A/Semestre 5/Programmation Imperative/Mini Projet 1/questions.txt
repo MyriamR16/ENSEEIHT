@@ -1,0 +1,131 @@
+Auteur 1 (exercice 1 & 3) : 
+Auteur 2 (exercice 2)     : 
+
+Vous devez répondre de manière courte aux questions suivantes.
+Il n'est pas demandé de modifier le programme que vous avez écrit mais
+simplement d'expliquer les modifications qu'il faudrait y apporter.
+
+Il faut remplacer les « ... » par votre réponse en laissant les lignes
+blanches avant et après.
+
+--------------------------------------------------------------------------------
+C1. Que se passe-t-il si dans Jeu_Devin_Exo2 l'utilisateur répond d'abord trop
+grand puis toujours trop petit ?
+--------------------------------------------------------------------------------
+
+Réponse : Lorsque l’utilisateur répond trop grand, la borne supérieur maxi sera réduite, pour réduire le champ de possibilités. L’ordinateur propose alors un nombre compris entre les nouvelles bornes (le milieu). 
+Par la suite, si l'utilisateur répond trop petit, c’est la borne inférieure qui va être augmenter, pour, une fois de plus, réduire les possibilités. L’ordinateur propose alors le milieu des deux nouvelles bornes.
+
+
+--------------------------------------------------------------------------------
+C2. Est-on sûr que Jeu_Devin_Exo1 se termine ?  Quel argument peut-on donner ?
+--------------------------------------------------------------------------------
+
+Réponse : Le programme de Jeu_Devin_Exo1 est composé d'opérations élémentaires et de conditions Si/Sinon qui terminent. 
+Cependant, il reste à savoir si la boucle "Repeter" se termine. Sa terminaison dépend de si l'utilisateur répond de manière cohérente en prenant en compte les indications fournies par l'ordinateur. Dans ce cas, le champ de suggestions de l'uilisateur diminue au fur et à mesure, ce qui constituera un variant de boucle. Cependant, si l'utilisateur répond de manière aléatoire, alors on peut ne jamais sortir de la boucle Repeter. 
+
+
+--------------------------------------------------------------------------------
+C3. Est-on sûr que Jeu_Devin_Exo2 se termine ?  Quel argument peut-on donner ?
+--------------------------------------------------------------------------------
+
+Réponse : Oui le Jeu_Devin_Exo2 termine car il y a un variant de boucle qui est l’intervalle [Mini,Maxi] qui décroît au fur et à mesure. En effet, les bornes de la dichotomie changent tout le temps jusqu’à ce que l’ordinateur devine le nombre, ou qu’il remarque que l’utilisateur triche. Dans le reste du code, il y a des boucles if et des actions élémentaires qui terminent par définition. 
+
+
+--------------------------------------------------------------------------------
+F1. Les noms Jeu_Devin_Exo1, Jeu_Devin_Exo2 et Jeu_Devin_Exo3 ne sont pas très
+parlants.  Par quoi pourrait-on les remplacer ?
+--------------------------------------------------------------------------------
+
+Réponse :  
+        Jeu_Devin_Exo1 : Utilisateur_devine
+        Jeu_Devin_Exo2 : Ordinateur_devine
+        Jeu_Devin_Exo3 : Jeu_Devin
+
+
+
+--------------------------------------------------------------------------------
+E1. Quelles sont les modifications à apporter à votre programme pour chercher
+des nombres compris entre 1 et 9999 ?
+--------------------------------------------------------------------------------
+
+Réponse : Dans le package Mon_Alea, dans Jeu_Devin_Exo1, il faut ecrire 
+“new Alea (1,9999);”.
+
+--------------------------------------------------------------------------------
+E2. Quelles sont les modifications à apporter pour que que l'utilisateur
+puisse utiliser aussi les caractères <, > et = pour indiquer si le nombre
+proposé est trop petit, trop grand ou le bon ?
+--------------------------------------------------------------------------------
+
+Réponse : 
+Il suffit de rajouter dans l’exercice Jeu_Devin_exo2 dans la boucle if : 
+
+        if (Indication = 'p') or (Indication = 'P') or (Indication = “<”) then  
+            Mini := Milieu -1 ;
+        elsif (Indication = 'g') or (Indication ='G') or (Indication = “>”) then
+            Maxi := Milieu+1;
+
+Et rajouter dans la sortie du Répéter : 
+exit when (Indication ='t') or (Indication='T') or (Indication = “=”);
+
+
+
+--------------------------------------------------------------------------------
+E3. On veut limiter le nombre de tentatives à 10.  Si le nombre n'a pas été
+trouvé avant, le joueur a perdu.  Comment prendre en compte cette évolution ?
+--------------------------------------------------------------------------------
+
+Réponse : Pour prendre en compte cette évolution, il faut faire les changements qui suivent : 
+
+exit when (Indication ='t') or (Indication='T') or (Compteur=10);
+
+Puis, dans la zone :  - - Donner le résultat. On rajoute ;
+SinonSi Compteur = 10 Alors
+     Ecrire(“Vous avez perdu ! “) 
+     Quitter le jeu
+
+
+--------------------------------------------------------------------------------
+E4. La recherche dichotomique conduit à toujours proposer les mêmes nombres.
+Comment faire pour donner l'impression que le programme joue comme un humain
+tout en restant efficace ?
+--------------------------------------------------------------------------------
+
+Réponse : Pour donner l'impression que le programme joue comme un humain on pourrait faire appel à Alea, pour générer une proposition d'un nombre aléatoire compris entre les deux bornes de la dichotomie. 
+
+
+--------------------------------------------------------------------------------
+E5. Actuellement, l'utilisateur doit attendre la fin d'un jeu pour quitter le
+programme.  On veut qu'il puisse le faire dès qu'il saisit 0 quand on lui pose
+une question. Le programme doit alors dire que l'utilisateur a abandonné la
+partie.  Comment faire ?
+--------------------------------------------------------------------------------
+
+Réponse : 
+
+Dans Jeu_Devin_Exo1, on rajoute à la condition de sortie du repeter: 
+exit when (Nombre_ordi = Nombre_uti) or (Nombre_uti=0);
+ 
+Et après etre sortie du Repeter , on réalise une boucle SiSinon : 
+Si Nombre_uti = Nombre_ordi Alors
+     Ecrire("Bravo, vous avez trouvé ")
+     Ecrire(Nombre_ordi,2)
+     Ecrire (" en")
+     Ecrire (Compteur,2)
+     Ecrire(" essais")
+Sinon 
+     Ecrire(“Vous avez abandonné !”)
+FinSi
+
+
+--------------------------------------------------------------------------------
+E6. Quand le programme détecte que l'utilisateur a triché, comment faire pour
+que le programme explique au joueur quand il a triché ?
+--------------------------------------------------------------------------------
+
+Réponse : Dans Jeu_Devin_Exo2, on rajoute après avoir dit “Vous avez trichez”
+Ecrire(“Vous avez changé de nombre en cours de route, ce qui aboutit à une contradiction dans mon raisonnement dichotomique. En effet je me retrouve désormais avec la borne inférieure de l’intervalle qui est supérieure à la borne supérieure de l’intervalle”). On pourrait faire en sorte que l'ordinateur donne exactement le moment à partir duquel l'utilisateur commence à tricher.
+
+
+--------------------------------------------------------------------------------

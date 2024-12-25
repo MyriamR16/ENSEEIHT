@@ -1,0 +1,299 @@
+% Validation de F6
+% 2023-10-27 14:40:09.676703
+
+
+################################################################################
+# Modification des fichiers fournis
+################################################################################
+
+
+================================================================================
+## Fichiers qui NE devaient PAS être modifiés
+================================================================================
+
+* Fichier alea.adb non modifié... ok
+* Fichier alea.ads non modifié... ok
+
+================================================================================
+## Fichiers qui DEVAIENT être modifiés
+================================================================================
+
+* Fichier jeu_devin_exo1.adb modifié... ok
+* Fichier jeu_devin_exo2.adb modifié... ok
+* Fichier jeu_devin_exo3.adb modifié... ok
+* Fichier questions.txt modifié... ok
+* Fichier rapport.pdf modifié... ok
+
+
+################################################################################
+# Nettoyer
+################################################################################
+
+* Running gnatclean... ok
+
+
+################################################################################
+# Compilations
+################################################################################
+
+* Compilation de jeu_devin_exo1.adb... ok
+* Compilation de jeu_devin_exo2.adb... ok
+
+  | jeu_devin_exo2.adb:3:06: warning: unit "Alea" is not referenced
+
+* Compilation de jeu_devin_exo3.adb... ok
+
+  | jeu_devin_exo3.adb:3:06: warning: unit "Alea" is not referenced
+
+* Running gnatclean... ok
+
+
+################################################################################
+# Exécutions
+################################################################################
+
+* Running gnatclean... ok
+
+================================================================================
+## Exécution de jeu_devin_exo1
+================================================================================
+
+* Compilation de jeu_devin_exo1.adb... ok
+
+--------------------------------------------------------------------------------
+### Test jeu_devin_exo1-sujet1.in
+--------------------------------------------------------------------------------
+
+* ./jeu_devin_exo1 < "900 10000 990 988 422 420 421"... ok
+* Comparaison de jeu_devin_exo1-sujet1.expected et jeu_devin_exo1-sujet1.out... différents
+
+   | J'ai choisi un nombre compris entre 1 et 999.                    |  J'ai choisi un nombre aleatoire entre 1 et 999 Proposition 0 900
+   | Proposition 1 : 900                                              |  Trop grand 
+   | Trop grand.                                                      |  Proposition 1 10000
+   | Proposition 2 : 10000                                            |  Trop grand 
+   | Trop grand.                                                      |  Proposition 2 990
+   | Proposition 3 : 990                                              |  Trop grand 
+   | Trop grand.                                                      |  Proposition 3 988
+   | Proposition 4 : 988                                              |  Trop grand 
+   | Trop grand.                                                      |  Proposition 4 422
+   | Proposition 5 : 422                                              |  Trop grand 
+   | Trop grand.                                                      |  Proposition 5 420
+   | Proposition 6 : 420                                              |  Trop petit 
+   | Trop petit.                                                      |  Proposition 6 421
+   | Proposition 7 : 421                                              |  Trouve : 
+   | Trouve.                                                          |  Bravo, vous avez trouve 421 en  7 essais
+   | Bravo. Vous avez trouve 421 en 7 essais.                         <
+
+
+================================================================================
+## Exécution de jeu_devin_exo2
+================================================================================
+
+* Compilation de jeu_devin_exo2.adb... ok
+
+  | jeu_devin_exo2.adb:3:06: warning: unit "Alea_Triche" is not referenced
+
+
+--------------------------------------------------------------------------------
+### Test jeu_devin_exo2-sujet1.in
+--------------------------------------------------------------------------------
+
+* ./jeu_devin_exo2 < "o g x t"... ok
+* Comparaison de jeu_devin_exo2-sujet1.expected et jeu_devin_exo2-sujet1.out... différents
+
+   | Avez-vous choisi un nombre compris entre 1 et 999 (o/n) ? o |  Avez-vous choisi un nombre entre 1 et 999 (o/n) ?
+   | Proposition 1 : 500                                         |  o
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? g                  |          500Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Proposition 2 : 250                                         |  g
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? x                  |          250Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Je n'ai pas compris. Merci de repondre :                    |  x
+   |    g si ma proposition est trop grande                      |  Trop (g)rand, trop (p)etit, (t)rouve ?
+   |    p si ma proposition est trop petite                      |  t
+   |    t si j'ai trouve le nombre                               |  J'ai trouve le nombre  250 en  2 Etapes
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? t                  <
+   | J'ai trouve 250 en 2 essais.                                <
+
+
+--------------------------------------------------------------------------------
+### Test jeu_devin_exo2-triche499.in
+--------------------------------------------------------------------------------
+
+* ./jeu_devin_exo2 < "o g p p p p p p p p p"... ok
+* Comparaison de jeu_devin_exo2-triche499.expected et jeu_devin_exo2-triche499.out... différents
+
+   | Avez-vous choisi un nombre compris entre 1 et 999 (o/n) ? o |  Avez-vous choisi un nombre entre 1 et 999 (o/n) ?
+   | Proposition 1 : 500                                         |  o
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? g                  |          500Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Proposition 2 : 250                                         |  g
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? p                  |          250Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Proposition 3 : 375                                         |  p
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? p                  |          375Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Proposition 4 : 437                                         |  p
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? p                  |          437Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Proposition 5 : 468                                         |  p
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? p                  |          468Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Proposition 6 : 484                                         |  p
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? p                  |          484Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Proposition 7 : 492                                         |  p
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? p                  |          492Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Proposition 8 : 496                                         |  p
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? p                  |          496Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Proposition 9 : 498                                         |  p
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? p                  |          498Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Proposition 10 : 499                                        |  p
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? p                  |          499Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Vous trichez. J'arrete cette partie.                        |  p
+   |                                                             >  Vous trichez!
+
+
+--------------------------------------------------------------------------------
+### Test jeu_devin_exo2-sujet2.in
+--------------------------------------------------------------------------------
+
+* ./jeu_devin_exo2 < "x O o T"... ok
+* Comparaison de jeu_devin_exo2-sujet2.expected et jeu_devin_exo2-sujet2.out... différents
+
+   | Avez-vous choisi un nombre compris entre 1 et 999 (o/n) ? x |  Avez-vous choisi un nombre entre 1 et 999 (o/n) ?
+   |                                                             >  x
+   | Avez-vous choisi un nombre compris entre 1 et 999 (o/n) ? O |  Avez-vous choisi un nombre entre 1 et 999 (o/n) ? 
+   |                                                             >  O
+   | Avez-vous choisi un nombre compris entre 1 et 999 (o/n) ? o |  Avez-vous choisi un nombre entre 1 et 999 (o/n) ? 
+   | Proposition 1 : 500                                         |  o
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? T                  |          500Trop (g)rand, trop (p)etit, (t)rouve ?
+   | J'ai trouve 500 en 1 essai.                                 |  T
+   |                                                             >  J'ai trouve le nombre  500 en  1 Etapes
+
+
+--------------------------------------------------------------------------------
+### Test jeu_devin_exo2-triche1000.in
+--------------------------------------------------------------------------------
+
+* ./jeu_devin_exo2 < "o p p p p p p p p p p"... ok
+* Comparaison de jeu_devin_exo2-triche1000.expected et jeu_devin_exo2-triche1000.out... différents
+
+   | Avez-vous choisi un nombre compris entre 1 et 999 (o/n) ? o |  Avez-vous choisi un nombre entre 1 et 999 (o/n) ?
+   | Proposition 1 : 500                                         |  o
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? p                  |          500Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Proposition 2 : 750                                         |  p
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? p                  |          750Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Proposition 3 : 875                                         |  p
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? p                  |          875Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Proposition 4 : 937                                         |  p
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? p                  |          937Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Proposition 5 : 968                                         |  p
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? p                  |          968Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Proposition 6 : 984                                         |  p
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? p                  |          984Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Proposition 7 : 992                                         |  p
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? p                  |          992Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Proposition 8 : 996                                         |  p
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? p                  |          996Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Proposition 9 : 998                                         |  p
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? p                  |          998Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Proposition 10 : 999                                        |  p
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? p                  |          999Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Vous trichez. J'arrete cette partie.                        |  p
+   |                                                             >  Vous trichez!
+
+
+--------------------------------------------------------------------------------
+### Test jeu_devin_exo2-triche0.in
+--------------------------------------------------------------------------------
+
+* ./jeu_devin_exo2 < "o g g g g g g g g g"... ok
+* Comparaison de jeu_devin_exo2-triche0.expected et jeu_devin_exo2-triche0.out... différents
+
+   | Avez-vous choisi un nombre compris entre 1 et 999 (o/n) ? o |  Avez-vous choisi un nombre entre 1 et 999 (o/n) ?
+   | Proposition 1 : 500                                         |  o
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? g                  |          500Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Proposition 2 : 250                                         |  g
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? g                  |          250Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Proposition 3 : 125                                         |  g
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? g                  |          125Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Proposition 4 : 62                                          |  g
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? g                  |           62Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Proposition 5 : 31                                          |  g
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? g                  |           31Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Proposition 6 : 15                                          |  g
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? g                  |           15Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Proposition 7 : 7                                           |  g
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? g                  |            7Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Proposition 8 : 3                                           |  g
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? g                  |            3Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Proposition 9 : 1                                           |  g
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? g                  |            1Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Vous trichez. J'arrete cette partie.                        |  g
+   |                                                             >  Vous trichez!
+
+
+================================================================================
+## Exécution de jeu_devin_exo3
+================================================================================
+
+* Compilation de jeu_devin_exo3.adb... ok
+
+  | jeu_devin_exo3.adb:3:06: warning: unit "Alea_Triche" is not referenced
+
+
+--------------------------------------------------------------------------------
+### Test jeu_devin_exo3-exemple1.in
+--------------------------------------------------------------------------------
+
+* ./jeu_devin_exo3 < "3 4 0"... ERREUR: Ne se termine pas !
+
+--------------------------------------------------------------------------------
+### Test jeu_devin_exo3-exemple3.in
+--------------------------------------------------------------------------------
+
+* ./jeu_devin_exo3 < "1 900 100 421 2 o t 1 421 0"... ok
+* Comparaison de jeu_devin_exo3-exemple3.expected et jeu_devin_exo3-exemple3.out... différents
+
+   |                                                                           |  Choisissez votre mode de jeu : 1 si l'ordinateur choisit le nombre et vou
+   | 1- L'ordinateur choisit un nombre et vous le devinez                      |  J'ai choisi un nombre aleatoire entre 1 et 999 Proposition 0 900
+   | 2- Vous choisissez un nombre et l'ordinateur le devine                    |  Trop grand 
+   | 0- Quitter le programme                                                   |  Proposition 1 100
+   | Votre choix : 1                                                           |  Trop petit 
+   |                                                                           |  Proposition 2 421
+   | J'ai choisi un nombre compris entre 1 et 999.                             |  Trouve : 
+   | Proposition 1 : 900                                                       |  Bravo, vous avez trouve 421 en  3 essais
+   | Trop grand.                                                               |  Choisissez votre mode de jeu : 1 si l'ordinateur choisit le nombre et vou
+   | Proposition 2 : 100                                                       |  Avez-vous choisi un nombre entre 1 et 999 (o/n) ?
+   | Trop petit.                                                               |  o
+   | Proposition 3 : 421                                                       |          500Trop (g)rand, trop (p)etit, (t)rouve ?
+   | Trouve.                                                                   |  t
+   | Bravo. Vous avez trouve 421 en 3 essais.                                  |  J'ai trouve le nombre  500 en  1 Etapes
+   |                                                                           |  Choisissez votre mode de jeu : 1 si l'ordinateur choisit le nombre et vou
+   | 1- L'ordinateur choisit un nombre et vous le devinez                      |  J'ai choisi un nombre aleatoire entre 1 et 999 Proposition 0 421
+   | 2- Vous choisissez un nombre et l'ordinateur le devine                    |  Trouve : 
+   | 0- Quitter le programme                                                   |  Bravo, vous avez trouve 421 en  1 essais
+   | Votre choix : 2                                                           |  Choisissez votre mode de jeu : 1 si l'ordinateur choisit le nombre et vou
+   |                                                                           <
+   | Avez-vous choisi un nombre compris entre 1 et 999 (o/n) ? o               <
+   | Proposition 1 : 500                                                       <
+   | Trop (g)rand, trop (p)etit ou (t)rouve ? t                                <
+   | J'ai trouve 500 en 1 essai.                                               <
+   |                                                                           <
+   | 1- L'ordinateur choisit un nombre et vous le devinez                      <
+   | 2- Vous choisissez un nombre et l'ordinateur le devine                    <
+   | 0- Quitter le programme                                                   <
+   | Votre choix : 1                                                           <
+   |                                                                           <
+   | J'ai choisi un nombre compris entre 1 et 999.                             <
+   | Proposition 1 : 421                                                       <
+   | Trouve.                                                                   <
+   | Bravo. Vous avez trouve 421 en 1 essai.                                   <
+   |                                                                           <
+   | 1- L'ordinateur choisit un nombre et vous le devinez                      <
+   | 2- Vous choisissez un nombre et l'ordinateur le devine                    <
+   | 0- Quitter le programme                                                   <
+   | Votre choix : 0                                                           <
+   |                                                                           <
+   |                                                                           <
+   | Au revoir...                                                              <
+
+
+--------------------------------------------------------------------------------
+### Test jeu_devin_exo3-exemple2.in
+--------------------------------------------------------------------------------
+
+* ./jeu_devin_exo3 < "3 -1 0"... ERREUR: Ne se termine pas !

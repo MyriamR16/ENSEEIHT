@@ -1,0 +1,42 @@
+#  GLPK model file created by SUN for RO teaching
+
+
+###############################  Model ###############################
+
+
+###############################  Sets  ###############################
+
+set FLUIDE; 
+
+set MAGASIN;	
+
+set DEMANDE;	
+
+################### Variables ###################
+
+var X{i in DEMANDE, j in FLUIDE, k in MAGASIN}, >=0; 
+
+
+###################  Constants: Data to load   #########################
+
+param FluideDemandeParCommande{i in DEMANDE, j in FLUIDE};
+param StockFluideParMagasin{i in MAGASIN, j in FLUIDE};
+param CoutUnitaireParMagasin{i in MAGASIN, j in FLUIDE};
+
+################### Constraints ###################
+
+
+s.t. ContrainteStock{j in FLUIDE, k in MAGASIN}:
+  sum{i in DEMANDE} X[i,j,k]  <= StockFluideParMagasin[k,j];
+
+
+s.t. ContrainteDemande{i in DEMANDE, j in FLUIDE}:
+  sum{k in MAGASIN} X[i,j,k]  = FluideDemandeParCommande[i,j];
+
+
+###### Objective ######
+
+minimize CoutTotal: 
+		sum{k in MAGASIN, j in FLUIDE} sum{i in DEMANDE } X[i,j,k] * CoutUnitaireParMagasin[k,j]; 
+
+end;

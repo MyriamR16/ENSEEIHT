@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_FzQHQHTQEe-_ZMS5-7kEig" selectedViews="_GAAw4HTQEe-_ZMS5-7kEig _GAIFoHTQEe-_ZMS5-7kEig _GAIssHTQEe-_ZMS5-7kEig _GAKh4HTQEe-_ZMS5-7kEig" version="15.2.0.202303281325">
+    <semanticResources>SimplePDL.ecore</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_GAAw4HTQEe-_ZMS5-7kEig">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_I_I0cHTQEe-_ZMS5-7kEig" name="simplepdl class diagram" repPath="#_I-1ScHTQEe-_ZMS5-7kEig" changeId="1727171671929">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+        <target xmi:type="ecore:EPackage" href="SimplePDL.ecore#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" uid="_GAIFoHTQEe-_ZMS5-7kEig">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Review']"/>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" uid="_GAIssHTQEe-_ZMS5-7kEig">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Archetype']"/>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" uid="_GAKh4HTQEe-_ZMS5-7kEig">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Generation']"/>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_I-1ScHTQEe-_ZMS5-7kEig">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_I_bvYHTQEe-_ZMS5-7kEig" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_I_bvYXTQEe-_ZMS5-7kEig" type="Sirius" element="_I-1ScHTQEe-_ZMS5-7kEig" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_VVAk8HTQEe-_ZMS5-7kEig" type="2003" element="_VUyigHTQEe-_ZMS5-7kEig">
+          <children xmi:type="notation:Node" xmi:id="_VVBMAHTQEe-_ZMS5-7kEig" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_VVCaIHTQEe-_ZMS5-7kEig" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_VVDoQHTQEe-_ZMS5-7kEig" type="3010" element="_VU7scHTQEe-_ZMS5-7kEig">
+              <styles xmi:type="notation:FontStyle" xmi:id="_VVDoQXTQEe-_ZMS5-7kEig" fontName="Ubuntu" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_VVDoQnTQEe-_ZMS5-7kEig"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_VVDoQ3TQEe-_ZMS5-7kEig" type="3010" element="_VU7scnTQEe-_ZMS5-7kEig">
+              <styles xmi:type="notation:FontStyle" xmi:id="_VVDoRHTQEe-_ZMS5-7kEig" fontName="Ubuntu" fontHeight="8"/>
+      

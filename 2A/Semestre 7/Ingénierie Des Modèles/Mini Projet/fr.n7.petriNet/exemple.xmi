@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<petriNet:Net
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:petriNet="http://petriNet"
+    name="exempleOCL">
+  <arcs poids="1"
+      destination="//@noeud.2"
+      source="//@noeud.0"/>
+  <arcs poids="1"
+      destination="//@noeud.1"
+      source="//@noeud.2"/>
+  <arcs poids="1"
+      destination="//@noeud.3"
+      source="//@noeud.1"/>
+  <arcs poids="1"
+      destination="//@noeud.0"
+      source="//@noeud.3"/>
+  <noeud xsi:type="petriNet:Place"
+      name="p1"
+      entrant="//@arcs.3"
+      sortant="//@arcs.0"
+      nbJetons="1"/>
+  <noeud xsi:type="petriNet:Place"
+      name="p2"
+      entrant="//@arcs.1"
+      sortant="//@arcs.2"/>
+  <noeud xsi:type="petriNet:Transition"
+      name="tr1"
+      entrant="//@arcs.0"
+      sortant="//@arcs.1"/>
+  <noeud xsi:type="petriNet:Transition"
+      name="tr2"
+      entrant="//@arcs.2"
+      sortant="//@arcs.3"/>
+</petriNet:Net>

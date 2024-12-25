@@ -1,0 +1,116 @@
+Problem:    
+Rows:       34
+Columns:    24 (24 integer, 12 binary)
+Non-zeros:  72
+Status:     INTEGER OPTIMAL
+Objective:  CoutTotal = 435 (MINimum)
+
+   No.   Row name        Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 ContrainteStock(C1,M1)
+                                   0                           3 
+     2 ContrainteStock(C1,M2)
+                                   1                           1 
+     3 ContrainteStock(C1,M3)
+                                   2                           2 
+     4 ContrainteStock(C2,M1)
+                                   0                           1 
+     5 ContrainteStock(C2,M2)
+                                   2                           2 
+     6 ContrainteStock(C2,M3)
+                                   1                           1 
+     7 ContrainteDemande(D1,C1)
+                                   2             2             = 
+     8 ContrainteDemande(D1,C2)
+                                   0            -0             = 
+     9 ContrainteDemande(D2,C1)
+                                   1             1             = 
+    10 ContrainteDemande(D2,C2)
+                                   3             3             = 
+    11 DefinitionBorneInfY(M1,D1,C1)
+                                   0            -0               
+    12 DefinitionBorneInfY(M1,D1,C2)
+                                   0            -0               
+    13 DefinitionBorneInfY(M1,D2,C1)
+                                   0            -0               
+    14 DefinitionBorneInfY(M1,D2,C2)
+                                   0            -0               
+    15 DefinitionBorneInfY(M2,D1,C1)
+                                   0            -0               
+    16 DefinitionBorneInfY(M2,D1,C2)
+                                   0            -0               
+    17 DefinitionBorneInfY(M2,D2,C1)
+                                   0            -0               
+    18 DefinitionBorneInfY(M2,D2,C2)
+                                   1            -0               
+    19 DefinitionBorneInfY(M3,D1,C1)
+                                   1            -0               
+    20 DefinitionBorneInfY(M3,D1,C2)
+                                   0            -0               
+    21 DefinitionBorneInfY(M3,D2,C1)
+                                   0            -0               
+    22 DefinitionBorneInfY(M3,D2,C2)
+                                   0            -0               
+    23 DefinitionBorneSup(M1,D1,C1)
+                                   0                          -0 
+    24 DefinitionBorneSup(M1,D1,C2)
+                                   0                          -0 
+    25 DefinitionBorneSup(M1,D2,C1)
+                                   0                          -0 
+    26 DefinitionBorneSup(M1,D2,C2)
+                                   0                          -0 
+    27 DefinitionBorneSup(M2,D1,C1)
+                                   0                          -0 
+    28 DefinitionBorneSup(M2,D1,C2)
+                                   0                          -0 
+    29 DefinitionBorneSup(M2,D2,C1)
+                                  -1                          -0 
+    30 DefinitionBorneSup(M2,D2,C2)
+                                  -3                          -0 
+    31 DefinitionBorneSup(M3,D1,C1)
+                                  -2                          -0 
+    32 DefinitionBorneSup(M3,D1,C2)
+                                   0                          -0 
+    33 DefinitionBorneSup(M3,D2,C1)
+                                   0                          -0 
+    34 DefinitionBorneSup(M3,D2,C2)
+                                  -3                          -0 
+
+   No. Column name       Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 Y(M1,D1,C1)  *              0             0             1 
+     2 Y(M1,D1,C2)  *              0             0             1 
+     3 Y(M1,D2,C1)  *              0             0             1 
+     4 Y(M1,D2,C2)  *              0             0             1 
+     5 Y(M2,D1,C1)  *              0             0             1 
+     6 Y(M2,D1,C2)  *              0             0             1 
+     7 Y(M2,D2,C1)  *              1             0             1 
+     8 Y(M2,D2,C2)  *              1             0             1 
+     9 Y(M3,D1,C1)  *              1             0             1 
+    10 Y(M3,D1,C2)  *              0             0             1 
+    11 Y(M3,D2,C1)  *              0             0             1 
+    12 Y(M3,D2,C2)  *              1             0             1 
+    13 X(M1,D1,C1)  *              0             0               
+    14 X(M1,D2,C1)  *              0             0               
+    15 X(M2,D1,C1)  *              0             0               
+    16 X(M2,D2,C1)  *              1             0               
+    17 X(M3,D1,C1)  *              2             0               
+    18 X(M3,D2,C1)  *              0             0               
+    19 X(M1,D1,C2)  *              0             0               
+    20 X(M1,D2,C2)  *              0             0               
+    21 X(M2,D1,C2)  *              0             0               
+    22 X(M2,D2,C2)  *              2             0               
+    23 X(M3,D1,C2)  *              0             0               
+    24 X(M3,D2,C2)  *              1             0               
+
+Integer feasibility conditions:
+
+KKT.PE: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output

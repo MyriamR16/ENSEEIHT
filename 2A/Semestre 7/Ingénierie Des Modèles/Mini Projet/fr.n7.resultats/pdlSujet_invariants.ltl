@@ -1,0 +1,4 @@
+[] (- ( Conception_finished /\ Conception_running )) /\ (- ( Conception_finished /\ Conception_ready )) /\ (- ( Conception_running /\ Conception_ready ));
+[] (- ( Programmation_finished /\ Programmation_running )) /\ (- ( Programmation_finished /\ Programmation_ready )) /\ (- ( Programmation_running /\ Programmation_ready ));
+[] (- ( RedactionDoc_finished /\ RedactionDoc_running )) /\ (- ( RedactionDoc_finished /\ RedactionDoc_ready )) /\ (- ( RedactionDoc_running /\ RedactionDoc_ready ));
+[] (- ( RedactionTests_finished /\ RedactionTests_running )) /\ (- ( RedactionTests_finished /\ RedactionTests_ready )) /\ (- ( RedactionTests_running /\ RedactionTests_ready ));

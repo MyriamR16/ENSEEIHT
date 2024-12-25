@@ -1,0 +1,2 @@
+Nous avons réussi à implémenter seulement la modulation/démodulation par filtrage, d'où l'unique fichier Matlab.
+Pour tracer les différentes figures, il faut décommenter le bloc qui correspond à la question, et lancer le fichier. 

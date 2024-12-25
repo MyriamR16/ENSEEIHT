@@ -1,0 +1,23 @@
+\* Problem: Assemblage *\
+
+Maximize
+Benefice: + 700 VC  + 300 VS 
+
+Subject To
+ContrainteTemps : + 6 VC + 5 VS <= 6000
+ContrainteSurface : + 2.5 VC + VS <= 1500
+ContrainteQuantiteVC : + VC <= 700
+
+\* To declare integer variables :   
+Integer 
+VC 
+VS  
+
+\* To declare binary variables :  
+\* Binary 
+\* VC
+\* VS
+
+
+End
+
